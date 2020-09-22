@@ -1,0 +1,30 @@
+//INTERNET OPTION CONFIGURATION - DO NOT MODIFY//
+
+[General Options]
+HOMEPAGE=http://planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=57949&lngWId=1
+DISABLEHIST=0
+DNSMODE=False
+
+[DNS Settings]
+DBSPECIFIC=3
+TIMEOUT=1500
+
+[Privacy Settings]
+BLOCKPOPUP=1
+PLAYSOUND=1
+NOTIFY=1
+
+[Filter Settings]
+ENABLEFILTER=Ñ;%%%%%%%%ÿ
+PASSWORD=Â;§%;Ñæ;%æ¼Ä%Äü;ÑüÄ;§ò~
+AUTOFILTER=;§¤%%ÿ%Ñ;›ñÑüü;%;µ%æ%Ñ
+
+[Miscellaneous]
+AUTOUPDATE=True
+BACKUPCONF=1
+STARTUP=1
+TEXTSIZE=2
+TOTD=0
+OPTTRANSPARENCY=100
+FORMTRANSPARENCY=100
+STAYONTOP=False
