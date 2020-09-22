@@ -1,0 +1,43 @@
+<style type="text/css">
+
+A:link
+{ text-decoration: none; color:#000000; }
+A:visited
+{ text-decoration: none; color:#000000; }
+A:active
+{ text-decoration: none; color:#000000; }
+A:hover
+{ text-decoration: none; color:#3F0C0C; font-family: verdana; font-size: xx-small; letter-spacing: 0pt;
+font-weight: normal; }
+
+body
+{
+scrollbar-face-color : #424D5E; 
+scrollbar-highlight-color : #000000; 
+scrollbar-3dlight-color : #424D5E; 
+scrollbar-shadow-color : #000000; 
+scrollbar-darkshadow-color : #424D5E;
+scrollbar-track-color : #545E74; 
+scrollbar-arrow-color : #FFFFFF; 
+}
+
+A:link
+{ text-decoration: none; color:#000000; }
+A:visited
+{ text-decoration: none; color:#000000; }
+A:active
+{ text-decoration: none; color:#000000; }
+A:hover
+{ text-decoration: none; color:#3F0C0C; font-family: verdana; font-size: xx-small; letter-spacing: 0pt; }
+
+
+
+td
+{ 
+font-family: verdana;
+color: #000000; 
+font-weight: normal;
+font-size: xx-small;
+}
+
+</style>

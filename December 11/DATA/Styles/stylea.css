@@ -1,0 +1,278 @@
+<style type="text/css">
+
+/* Time-stamp: <2004-10-20> */
+
+/* IMPORTANT NOTE.  These stylesheets are NOT intended for
+website authors. They are for browser configuration. Using
+them on websites that you author might not be a good idea.
+- Silas S. Brown */
+
+/* Note that this stylesheet uses absolute point sizes in a
+number of different places.  This is not good coding, but it
+is necessary with some browsers, to avoid problems when
+interacting with author-supplied stylesheets. */
+
+/* Some versions of IE ignore the first entry so: */
+.placebo { line-height: normal; } /* should be harmless even if there is a
+                                     .placebo - we want line-height normal
+                                     anyway - and should validate */
+
+@media screen,projection,tv {
+  /* (so it doesn't print as it is shown.  Not all browsers
+  respect this directive.) */
+
+/* General rules for many elements (explicity specify,
+because browsers sometimes have non-standard inheritance
+rules).  These elements should include "presentation" markup
+(e.g. 'small', 'big') to stop it from changing the size etc.
+*/
+/* (`center' not included, because that would cause
+<H1><CENTER> to be formatted w/out special H1 treatment) */
+a,blockquote,caption,cite,code,col,colgroup,html,iframe,pre,
+body,div,P,input,select,option,textarea,table,tr,td,th,h1,
+h2,h3,h4,h5,h6,font,basefont,small,big,span,ul,ol,li,i,em,
+nobr,tt,kbd,b,strong,dl,dt,dd,blink,button,address,dfn,form,
+marquee
+{
+  font-family: times, utopia, /* charter, */ serif ! important;
+  font-size: 20px ! important;
+  color: yellow ! important;
+  background: black ! important;
+  background-image: none ! important;
+  letter-spacing: normal ! important; /* or 0em etc */
+  line-height: normal ! important; /* or 115% etc */
+  
+/* turn off "width" overrides (especially if they
+   incorrectly mix it with bad presentation markup,
+   e.g. http://www.ltx.com/prenvisi.html which has a 510-pixel
+   table within a 468-pixel div, resulting in galeon going
+   somewhat wrong in large print) */
+  /* 2003-08-01 GALEON BUG: In some versions, an
+  author-specified "width" will override this, e.g. on
+  http://www.gnome.org/gnome-office/bonobo.shtml */
+  width: auto ! important;
+  height: auto ! important;
+  
+  /* also turn off absolute positioning - it can mess things
+  up at different font sizes */
+  position: static ! important;
+
+  /* and so can floats (floating tables &c), if the float is
+  so big that there is no room for the text it's floating
+  over */
+  float: none ! important;
+
+  /* while we're at it, might as well: */
+  min-height: 0px ! important;
+  max-height: none ! important;
+  min-width: 0px ! important;
+
+  /* Set max-width to 522.2px.  This helps reduce the amount
+  of left/right scrolling that results when there is lots of
+  text within a block element (usually a TD) and some of it
+  contains very wide words - this often results in the whole
+  TD being too wide in large print,
+  e.g. http://www.sarc.com/avcenter/venc/data/w32.blaster.worm.html
+     It seems this works OK on Galeon 1.2.5 but NOT on
+     Internet Explorer 6 (even if use universal selector *).
+     Another problem is it won't affect anonymous block
+     elements (where blocks and inlines are mixed) since
+     these are no part of the document tree and max-width is
+     not inherited. */
+  max-width: 522.2px ! important;
+
+  /* Margins to 0px, because sometimes absolute positioning
+  + margins are used for columns e.g. www.webstandards.org;
+  no longer need big margins in that case.  Don't touch top
+  & bottom - it affects headers' spacing */
+  margin-left: 0px ! important;
+  margin-right: 0px ! important;
+  padding: 0px ! important;
+
+  text-decoration: none ! important; /* nobody blink (this
+  also serves as an exception to the A rules, for A NAME) */
+  }
+
+/* make sure firefox doesn't scroll marquee elements */
+marquee { 
+   -moz-binding: none !important;
+   display: block;
+   height: auto !important;
+}
+
+/* Elements EXCEPT user-input should have whitespace set to
+normal (don't "nobr" etc).  Could put "white-space" above
+and make an exception here, but some browsers ignore this.
+So need to re-list the above elements except user i/p & set
+whitespace accordingly. */
+/* galeon 1.25 - we also have to exclude "body" and "div"
+from this list, for some reason */
+/* also excluding "font" because some mailing list archives
+have FONT within PRE (for some reason) and this can confuse
+galeon.  Hope nobody's using FONT to specify "nowrap" */
+
+a,blockquote,caption,center,cite,code,col,colgroup,html,
+P,select,option,table,tr,td,h1,h2,h3,h4,h5,h6,form,
+basefont,small,big,span,ul,ol,li,i,em,nobr,address,dfn
+{
+  white-space: normal ! important; /* don't "nowrap" */
+}
+pre,code,tt,kbd { font-family: monospace ! important; }
+
+/* Don't want the document's SPACER tags after we've messed
+with the formatting (can lead to blank screens etc) */
+spacer { display: none ! important; }
+
+/* -------------------------------------------- */
+/* Headings - formatting and sizes */
+/* -------------------------------------------- */
+
+H1, H2, H3, H4, H5, H6
+{
+  color: #8080FF ! important;
+  font-style: normal ! important;
+  font-weight: bold ! important;
+  font-family: helvetica, arial, verdana ! important;
+  font-variant: normal ! important;
+  }
+H1, H1 A {font-size: 33.3px ! important;}
+H2, H2 A {font-size: 30px ! important;}
+H3, H3 A {font-size: 26.7px ! important;}
+H4, H4 A {font-size: 23.3px ! important;}
+H5, H5 A {font-size: 20px ! important;}
+H6, H6 A {font-size: 16.7px ! important;}
+
+/* -------------------------------------------- */
+/* Links - underlining and colours */
+/* -------------------------------------------- */
+
+A:link, A:link FONT, A:link BIG, A:link SMALL,
+A:link BASEFONT, A:link BR, A:link B, A:link STRONG
+{ color: #00ff00 ! important;
+  /* (don't say 'green' - it's too dark) */
+  text-decoration: underline ! important; }
+A:visited, A:visited FONT, A:visited BIG, A:visited SMALL,
+A:visited BASEFONT, A:visited BR, A:visited B, A:visited STRONG
+{ color: #00FFFF ! important;
+  text-decoration: underline ! important; }
+A:hover, A:hover FONT, A:hover BIG, A:hover SMALL,
+A:hover BASEFONT, A:hover BR, A:hover B, A:hover strong
+{ background-color: #0000c0 ! important; }
+/* Bug: <A NAME> still turns blue on hover (under galeon
+1.25) (but hopefully shouldn't get whole paragraphs doing
+it, because P etc are included in the "background=black"
+above) */
+A:active, A:active FONT, A:active BIG, A:active SMALL,
+A:active BASEFONT, A:active BR, A:active B, A:active strong
+{ color: red ! important;
+  text-decoration: underline ! important; }
+
+/* -------------------------------------------- */
+/* Miscellaneous
+/* -------------------------------------------- */
+
+I,EM,CITE,ADDRESS,DFN {
+       font-style: normal ! important;
+       font-weight: normal ! important;
+       font-family: helvetica, arial, verdana ! important;
+       font-variant: normal ! important;
+       color: white ! important;
+       }
+/* (can be easier to read than italic) */
+
+B,STRONG { font-weight: bold ! important; color: #ffff80 !important; }
+
+/* exception to above margin rules - keep the whole document
+slightly away from window borders */
+body { margin-left: 5.6px ! important;
+       margin-right: 5.6px ! important; }
+
+ul,ol,li { margin-left: 11.1px ! important; }
+
+/* background for transparent images, so at least stand a
+chance of seeing transparent imgs that were meant for white
+bkg (or black bkg)*/
+img { background: #808000 ! important; }
+
+/* Different colours for form buttons (and can be useful to
+have a reset button in a different colour) */
+button {background: #600040 ! important; background-color: #600040 ! important;}
+input[type=submit] {background: #600040 ! important;}
+input[type=reset] {background: #400060 ! important;}
+
+/* Separate adjacent links (works in full CSS2; may be
+intermittent on some browsers).
+   The :not(:empty) part is a nasty hack to stop Internet
+   Explorer (5+6) from trying to interpret this, because
+   IE's interpretation results in the links not being
+   distinguished from the text at all.  Only real CSS2
+   browsers should understand :not(:empty), so it's a way of
+   saying "don't touch this unless you're a CSS2 browser".
+   */
+:not(:empty) a:link:before, :not(:empty) a:visited:before
+{ content: "[" ! important; color: yellow ! important;
+  text-decoration: none ! important; }
+:not(:empty) a:link:after, :not(:empty) a:visited:after
+{ content: "]" ! important; color: yellow ! important;
+  text-decoration: none ! important; }
+
+/* Repeat ALT tags after images (works in full CSS2; may be
+intermittent on some browsers) */
+img:after { content: attr(alt) ! important; color: #FF00FF ! important; }
+
+  /* avoid first-letter colour overrides (haven't tested
+  this in all browsers; might have to write it all out
+  longhand and have explicit exceptions for links etc) */
+  :first-letter, :first-line { color: inherit ! important;
+                   background: inherit ! important; }
+
+/* *************************************************** */
+
+/* CSS 2/3 features - this won't work in CSS 1.  This is
+needed for viewing XML+CSS pages that don't have HTML
+markup.  Not perfect but should be better than nothing. */
+
+/* Careful not to use the universal selector, because
+   it can mess up Mozilla's UI.  Also careful what to
+   include here - e.g. don't override text-decoration
+   because this CSS won't be able to put it back in for
+   links (since it doesn't know which elements ARE links in
+   arbitrary XML).  Just provide basic readability. */
+:root:not(HTML), :root:not(HTML) :not(:empty),
+:root:not(HTML) * :not(:empty),
+:root:not(HTML) * * :not(:empty),
+:root:not(HTML) * * * *,   /* include some specific ones */
+:root:not(HTML) * * * * *, /* in case > isn't supported */
+:root:not(HTML) > :not(:empty)
+{
+  background: black ! important;
+  color: yellow ! important;
+  font-size: 20px ! important;
+  max-width: 522.2px ! important; /* as before */
+  width: auto ! important;
+  height: auto ! important;
+  position: static ! important;
+  float: none ! important;
+  min-height: 0px ! important;
+  max-height: none ! important;
+  min-width: 0px ! important;
+  white-space: normal ! important;
+  }
+/* Exception to above for Mozilla scrollbars */
+:root:not(HTML) slider:not(:empty) { background: #301090 ! important; }
+/* and another exception for HTML headings (but > may not be supported) */
+H1 > *, H2 > *, H3 > *, H4 > *, H5 > *, H6 > *, A > *
+{ color: inherited ! important; font-size: inherited ! important; }
+
+/* End of CSS2+ XML-viewing stuff */
+
+/* This bit is site-specific: */
+dt.AccuNewBook, dd.AccuNewBook {
+  color: #ff60ff ! important;
+  font-weight: bold ! important;
+}
+
+}
+
+
+</style>
